@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    
+    <!-- Lien vers le CSS externe -->
+    <link rel="stylesheet" href="style.css" />
+    
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    
+    <!-- Google Fonts pour une typographie moderne -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+    <!-- ==================== NAVIGATION ==================== -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">BMK-<span> Folio</span></a>
+            <ul class="nav-links">
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#experience">Expérience</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#skills">Compétences</a></li>
+                <li><a href="#activities">Activités</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== HERO / HEADER ==================== -->
+    <header class="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <p class="hero-greeting">👋 Bonjour, je suis</p>
+                <h1 class="hero-title">
+                    Brio-Mayor <span>KOSSOKO</span>
+                </h1>
+                <div class="typing-wrapper">
+                    <span class="typing-text"></span>
+                </div>
+                <p class="hero-description">
+                    Spécialiste en Sécurité des Systèmes & Réseaux<br />
+                    IT Polyvalent | Passionné de Cybersécurité & Data Science
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Me contacter</a>
+                    <a href="#skills" class="btn btn-outline">Voir mes compétences</a>
+                </div>
+            </div>
+            <div class="hero-illustration">
+                <i class="fas fa-shield-halved"></i>
+            </div>
+        </div>
+        <div class="hero-wave">
+            <svg viewBox="0 0 1440 120" fill="none">
+                <path d="M0 40L60 50C120 60 240 80 360 80C480 80 600 60 720 50C840 40 960 40 1080 50C1200 60 1320 80 1380 80L1440 80V120H0V40Z" fill="#f8fbff"/>
+            </svg>
+        </div>
+    </header>
+
+    <!-- ==================== À PROPOS ==================== -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>À propos de moi</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>
+                        <strong>Diplômé d'une Licence en Sécurité des Systèmes et Réseaux Informatiques</strong> 
+                        avec la mention <span class="highlight">Très Bien</span> 🏆, je suis un professionnel passionné par 
+                        la protection des infrastructures et la résolution de problèmes techniques.
+                    </p>
+                    <p>
+                        J'ai eu l'opportunité d'effectuer un stage de <strong>3 mois à l'Assemblée nationale du Bénin</strong>, 
+                        où j'ai mis en pratique mes compétences en administration système et en sécurité réseau dans un 
+                        environnement institutionnel exigeant.
+                    </p>
+                    <p>
+                        Polyvalent, je maîtrise aussi bien l'installation d'OS et de serveurs, le dépannage matériel/logiciel, 
+                        que le montage vidéo et le graphisme avec Canva. Actuellement, je me forme en Data Science, 
+                        Machine Learning et Deep Learning.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number">+3</span>
+                            <span class="stat-label">Mois de stage</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">TB</span>
+                            <span class="stat-label">Mention Licence</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">Certifications</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="about-icon-circle">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== EXPÉRIENCE ==================== -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-header">
+                <h2>Expérience professionnelle</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="exp-card">
+                <div class="exp-icon">
+                    <i class="fas fa-landmark"></i>
+                </div>
+                <div class="exp-content">
+                    <h3>Stagiaire en Sécurité & Administration Système</h3>
+                    <h4>Assemblée nationale du Bénin <span>| 3 mois</span></h4>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Administration et maintenance des serveurs et postes de travail</li>
+                        <li><i class="fas fa-check-circle"></i> Mise en place de mesures de sécurité réseau et sensibilisation</li>
+                        <li><i class="fas fa-check-circle"></i> Dépannage matériel et logiciel en environnement professionnel</li>
+                        <li><i class="fas fa-check-circle"></i> Participation à l'optimisation de l'infrastructure IT</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CERTIFICATIONS ==================== -->
+    <section id="certifications" class="certifications">
+        <div class="container">
+            <div class="section-header">
+                <h2>Certifications</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="cert-grid">
+                <!-- CTIGA -->
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-skull"></i>
+                    </div>
+                    <h3>CTIGA</h3>
+                    <p>Red Team</p>
+                    <span class="cert-badge">Certifié</span>
+                    <a href="https://courses.redteamleaders.com/exam-completion/08a05d91a89175b9" target="_blank" class="cert-link">
+                        <i class="fas fa-external-link-alt"></i> Voir le certificat
+                    </a>
+                </div>
+
+                <!-- NSE 1 -->
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-shield"></i>
+                    </div>
+                    <h3>NSE 1</h3>
+                    <p>Fortinet Network Security Associate</p>
+                    <span class="cert-badge">Certifié</span>
+                    <a href="https://www.credly.com/badges/c1dae8b8-ac67-41e2-b33e-e86417cdbee5/public_url" target="_blank" class="cert-link">
+                        <i class="fas fa-external-link-alt"></i> Voir le certificat
+                    </a>
+                </div>
+
+                <!-- NSE 2 -->
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-shield"></i>
+                    </div>
+                    <h3>NSE 2</h3>
+                    <p>Fortinet Network Security Associate</p>
+                    <span class="cert-badge">Certifié</span>
+                    <a href="https://www.credly.com/badges/5f8ecd5a-e682-431b-b372-572594e512ec/public_url" target="_blank" class="cert-link">
+                        <i class="fas fa-external-link-alt"></i> Voir le certificat
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== COMPÉTENCES ==================== -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2>Mes compétences</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="skills-grid">
+                <!-- Groupe 1 : Systèmes & Réseaux -->
+                <div class="skill-category">
+                    <h3><i class="fas fa-server"></i> Systèmes & Réseaux</h3>
+                    <div class="skill-tags">
+                        <span>Installation OS (Windows, Linux, macOS)</span>
+                        <span>Création et hébergement de site web</span>
+                        <span>Administration serveurs (Windows Server, Linux)</span>
+                        <span>Réseau (TCP/IP, DNS, DHCP, VLAN)</span>
+                        <span>Dépannage matériel & logiciel</span>
+                    </div>
+                </div>
+                <!-- Groupe 2 : Sécurité -->
+                <div class="skill-category">
+                    <h3><i class="fas fa-lock"></i> Cybersécurité</h3>
+                    <div class="skill-tags">
+                        <span>Red Team / Pentesting (CTIGA)</span>
+                        <span>Sécurité réseau (Fortinet NSE)</span>
+                        <span>Analyse de vulnérabilités</span>
+                        <span>HTB & TryHackMe (actif)</span>
+                    </div>
+                </div>
+                <!-- Groupe 3 : Création & Multimédia -->
+                <div class="skill-category">
+                    <h3><i class="fas fa-video"></i> Création & Multimédia</h3>
+                    <div class="skill-tags">
+                        <span>Montage vidéo (professionnel)</span>
+                        <span>Graphisme avec Canva</span>
+                        <span>Création de contenu visuel</span>
+                    </div>
+                </div>
+                <!-- Groupe 4 : IA & Data -->
+                <div class="skill-category">
+                    <h3><i class="fas fa-brain"></i> IA & Data Science</h3>
+                    <div class="skill-tags">
+                        <span>Prompting IA (maîtrise)</span>
+                        <span>Machine Learning (débutant)</span>
+                        <span>Deep Learning (débutant)</span>
+                        <span>Data Science (en apprentissage)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== ACTIVITÉS ==================== -->
+    <section id="activities" class="activities">
+        <div class="container">
+            <div class="section-header">
+                <h2>Activités & Projets</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="activities-grid">
+                <div class="activity-card">
+                    <i class="fas fa-skull-crossbones"></i>
+                    <h3>Hack The Box</h3>
+                    <p>Actif sur la plateforme, résolution de machines et challenges de pentesting</p>
+                    <a href="#" class="activity-link">Voir mon profil</a>
+                </div>
+                <div class="activity-card">
+                    <i class="fas fa-user-secret"></i>
+                    <h3>TryHackMe</h3>
+                    <p>Pratique régulière de rooms en sécurité offensive et défensive</p>
+                    <a href="#" class="activity-link">Voir mon profil</a>
+                </div>
+                <div class="activity-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Projets personnels</h3>
+                    <p>Automatisation, scripts de sécurité, labs virtuels et veille technologique</p>
+                    <a href="#" class="activity-link">Explorer</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CONTACT ==================== -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Me contacter</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="contact-content">
+                <p>N'hésitez pas à me joindre pour toute collaboration, projet ou opportunité !</p>
+                <div class="contact-links">
+                    <a href="https://github.com/Rayebmk" target="_blank" class="contact-btn github">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/brio-mayor-kossoko-5a1514340" target="_blank" class="contact-btn linkedin">
+                        <i class="fab fa-linkedin-in"></i> LinkedIn
+                    </a>
+                    <a href="wa.me/+22958749424" target="_blank" class="contact-btn twitter">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                    <a href="mailto:kossokoadewoumi@gmail.com" class="contact-btn email">
+                        <i class="fas fa-envelope"></i> Email
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Tous droits réservés.</p>
+            <p class="footer-quote">"La sécurité n'est pas un produit, c'est un processus."</p>
+        </div>
+    </footer>
+
+    <!-- Script JS pour l'effet de frappe et le menu mobile -->
+    <script>
+        // --- Effet de frappe (Typing) ---
+        const words = [
+            'Spécialiste en Cybersécurité',
+            'Administrateur Système & Réseaux',
+            'Pentester en devenir (Red Team)',
+            'Passionné de Data Science & IA'
+        ];
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingElement = document.querySelector('.typing-text');
+
+        function typeEffect() {
+            const currentWord = words[wordIndex];
+            if (isDeleting) {
+                typingElement.textContent = currentWord.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingElement.textContent = currentWord.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            if (!isDeleting && charIndex === currentWord.length) {
+                isDeleting = true;
+                setTimeout(typeEffect, 2000);
+                return;
+            }
+            if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+                setTimeout(typeEffect, 500);
+                return;
+            }
+            const speed = isDeleting ? 50 : 100;
+            setTimeout(typeEffect, speed);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            typeEffect();
+        });
+
+        // --- Menu mobile (Hamburger) ---
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Fermer le menu au clic sur un lien (mobile)
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // --- Animation au scroll (fade-in) ---
+        const observerOptions = { threshold: 0.2 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section-header, .about-grid, .cert-card, .skill-category, .activity-card, .exp-card, .contact-content').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
