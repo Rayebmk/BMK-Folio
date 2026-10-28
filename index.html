@@ -1,383 +1,644 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
-    
-    <!-- Lien vers le CSS externe -->
-    <link rel="stylesheet" href="style.css" />
-    
-    <!-- Font Awesome pour les icônes -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-    
-    <!-- Google Fonts pour une typographie moderne -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>BMK-Folio</title>
+  <meta name="description" content="Portfolio de Brio-Mayor Kossoko, titulaire d’une licence en sécurité des systèmes et réseaux informatiques (mention Très Bien). Administration système, sécurité réseau et pratique Red Team — certifications CTIGA et Fortinet FCF.">
+  <meta name="author" content="Brio-Mayor Kossoko">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#070b14" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f5f8fc" media="(prefers-color-scheme: light)">
+
+  <!-- Aperçu lors du partage sur les réseaux sociaux -->
+  <meta property="og:type" content="profile">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="BMK-Folio">
+  <meta property="og:title" content="Brio-Mayor Kossoko — Sécurité des systèmes &amp; réseaux">
+  <meta property="og:description" content="Licence SSRI (mention Très Bien), stage à l’Assemblée nationale du Bénin, certifications CTIGA et Fortinet FCF.">
+  <meta name="twitter:card" content="summary">
+
+  <!-- Favicon SVG embarqué : aucune requête réseau supplémentaire -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 2l11 4v8c0 7.1-4.6 13-11 16-6.4-3-11-8.9-11-16V6z' fill='%2322d3ee'/%3E%3Cpath d='M11 16l3.5 3.5L21 13' fill='none' stroke='%23050a12' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+  <a class="skip-link" href="#contenu">Aller au contenu principal</a>
 
-    <!-- ==================== NAVIGATION ==================== -->
-    <nav class="navbar">
-        <div class="container nav-container">
-            <a href="#" class="logo">BMK-<span> Folio</span></a>
-            <ul class="nav-links">
-                <li><a href="#about">À propos</a></li>
-                <li><a href="#experience">Expérience</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#skills">Compétences</a></li>
-                <li><a href="#activities">Activités</a></li>
-                <li><a href="#contact">Contact</a></li>
+  <!-- ============================================================
+       Bibliothèque d'icônes SVG (aucune dépendance externe)
+  ============================================================ -->
+  <svg class="svg-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4.5 6v5.5c0 4.6 3.1 8.4 7.5 9.5 4.4-1.1 7.5-4.9 7.5-9.5V6L12 3Z"/></symbol>
+    <symbol id="i-shield-check" viewBox="0 0 24 24"><path d="M12 3 4.5 6v5.5c0 4.6 3.1 8.4 7.5 9.5 4.4-1.1 7.5-4.9 7.5-9.5V6L12 3Z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-server" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></symbol>
+    <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><rect x="9.5" y="9.5" width="5" height="5"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></symbol>
+    <symbol id="i-film" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 5v14M17 5v14M3 9h4M3 15h4M17 9h4M17 15h4"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></symbol>
+    <symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 2h6M10.5 2v6.5L4.9 18a2 2 0 0 0 1.7 3h10.8a2 2 0 0 0 1.7-3l-5.6-9.5V2"/><path d="M7.5 15h9"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5L2 9Z"/><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-5.4 7-11a7 7 0 1 0-14 0c0 5.6 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.5 9.4 9.4 0 0 1-3.5-.7L3 21l1.7-5.1A8.5 8.5 0 1 1 21 11.5Z"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-8.5 8.5"/><path d="M18 14v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12M7.5 10.5 12 15l4.5-4.5M4 21h16"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.5.2 2.7.1 3 .8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M6.94 5a1.94 1.94 0 1 1-3.88 0 1.94 1.94 0 0 1 3.88 0ZM3.5 8.5h3.4V21H3.5V8.5Zm5.6 0h3.25v1.7h.05c.45-.85 1.55-1.75 3.2-1.75 3.42 0 4.05 2.25 4.05 5.18V21h-3.4v-6.6c0-1.57-.03-3.6-2.2-3.6-2.2 0-2.53 1.72-2.53 3.49V21H9.1V8.5Z"/></symbol>
+  </svg>
+
+  <!-- ============================================================
+       EN-TÊTE
+  ============================================================ -->
+  <header class="site-header">
+    <div class="container header__inner">
+      <a class="brand" href="#top" aria-label="Brio-Mayor Kossoko — retour en haut">
+        <span class="brand__mark" aria-hidden="true">
+          <svg class="icon"><use href="#i-shield-check"/></svg>
+        </span>
+        <span class="brand__text">BMK<span>.</span>folio</span>
+      </a>
+
+      <nav class="nav" aria-label="Navigation principale">
+        <ul class="nav-menu" id="menu">
+          <li class="nav-menu__close">
+            <a href="#top" aria-label="Fermer le menu">
+              <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
+              Fermer
+            </a>
+          </li>
+          <li><a href="#profil">Profil</a></li>
+          <li><a href="#competences">Compétences</a></li>
+          <li><a href="#parcours">Parcours</a></li>
+          <li><a href="#certifications">Certifications</a></li>
+          <li><a href="#labs">Labs</a></li>
+          <li><a href="#cv">CV</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <a class="btn btn--ghost btn--sm header__cta" href="#contact">Me contacter</a>
+
+        <a class="nav-toggle" href="#menu" aria-label="Ouvrir le menu" aria-controls="menu">
+          <span class="nav-toggle__bars" aria-hidden="true"></span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenu">
+
+    <!-- ============================================================
+         HÉRO
+    ============================================================ -->
+    <section class="hero" id="top">
+      <div class="container hero__inner">
+        <div class="hero__copy">
+          <p class="eyebrow">
+            <span class="status-dot" aria-hidden="true"></span>
+            Ouvert aux opportunités
+          </p>
+
+          <h1 class="hero__title">
+            Brio-Mayor
+            <span class="gradient-text">KOSSOKO</span>
+          </h1>
+
+          <p class="hero__role">Diplômé en sécurité des systèmes et réseaux</p>
+
+          <p class="hero__lead">
+            Titulaire d’une <strong>licence en sécurité des systèmes et réseaux informatiques</strong>
+            (mention Très Bien), je sécurise, administre et dépanne des infrastructures — du poste
+            de travail au serveur. Certifié Fortinet FCF et CTIGA Red Team.
+          </p>
+
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="mailto:kossokoadewoumi@gmail.com">
+              Me contacter
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+            <a class="btn btn--ghost" href="#parcours">Voir mon parcours</a>
+          </div>
+
+          <dl class="hero__facts">
+            <div>
+              <dt>Formation</dt>
+              <dd>Licence SSRI · mention TB</dd>
+            </div>
+            <div>
+              <dt>Stage</dt>
+              <dd>Assemblée nationale du Bénin</dd>
+            </div>
+            <div>
+              <dt>Certifications</dt>
+              <dd>CTIGA · FCF</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="hero__panel">
+          <div class="term" aria-hidden="true">
+            <div class="term__bar">
+              <span class="term__dots"><span></span><span></span><span></span></span>
+              <span class="term__title">profil — bash</span>
+            </div>
+            <div class="term__body">
+              <p><span class="t-prompt">brio@bmk</span><span class="t-path">:~$</span> whoami</p>
+              <p class="t-out">brio-mayor.kossoko</p>
+
+              <p><span class="t-prompt">brio@bmk</span><span class="t-path">:~$</span> cat profil.yaml</p>
+              <p class="t-out"><span class="t-key">nom</span>: Kossoko Brio-Mayor</p>
+              <p class="t-out"><span class="t-key">diplome</span>: Licence SSRI — mention TB</p>
+              <p class="t-out"><span class="t-key">certifs</span>: [CTIGA, FCF]</p>
+              <p class="t-out"><span class="t-key">focus</span>: [réseau, systèmes, pentest]</p>
+
+              <p><span class="t-prompt">brio@bmk</span><span class="t-path">:~$</span> ./statut.sh</p>
+              <p class="t-ok">[ok] ouvert aux opportunités</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         01 — PROFIL
+    ============================================================ -->
+    <section class="section" id="profil" aria-labelledby="profil-title">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow">01 — Profil</p>
+          <h2 id="profil-title">Comprendre un système pour mieux le protéger</h2>
+          <p class="section__lead">
+            Administration système, sécurité réseau et pratique offensive : trois facettes
+            complémentaires d’un même métier.
+          </p>
+        </header>
+
+        <div class="about">
+          <div class="about__text">
+            <p>
+              Diplômé d’une licence en sécurité des systèmes et réseaux informatiques
+              (mention Très Bien), j’évolue à la frontière entre l’administration système
+              et la sécurité opérationnelle : durcir un serveur, segmenter un réseau,
+              diagnostiquer une panne, expliquer les bonnes pratiques.
+            </p>
+            <p>
+              Mon stage de trois mois à l’<strong>Assemblée nationale du Bénin</strong> m’a
+              confronté à un environnement institutionnel exigeant : administration de
+              serveurs et de postes de travail, application de mesures de sécurité réseau,
+              sensibilisation des utilisateurs et dépannage au quotidien.
+            </p>
+            <p>
+              Je continue d’élargir le spectre : pratique régulière sur Hack The Box et
+              TryHackMe, et formation en data science, machine learning et deep learning —
+              parce que la détection passe de plus en plus par les données.
+            </p>
+
+            <ul class="checklist">
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Administration Windows, Linux et Windows Server</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Réseau : TCP/IP, DNS, DHCP, VLAN</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Sécurité réseau et analyse de vulnérabilités</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Dépannage matériel et logiciel</li>
             </ul>
-            <div class="hamburger">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
-    </nav>
+          </div>
 
-    <!-- ==================== HERO / HEADER ==================== -->
-    <header class="hero">
-        <div class="container hero-container">
-            <div class="hero-content">
-                <p class="hero-greeting">👋 Bonjour, je suis</p>
-                <h1 class="hero-title">
-                    Brio-Mayor <span>KOSSOKO</span>
-                </h1>
-                <div class="typing-wrapper">
-                    <span class="typing-text"></span>
-                </div>
-                <p class="hero-description">
-                    Spécialiste en Sécurité des Systèmes & Réseaux<br />
-                    IT Polyvalent | Passionné de Cybersécurité & Data Science
-                </p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">Me contacter</a>
-                    <a href="#skills" class="btn btn-outline">Voir mes compétences</a>
-                </div>
-            </div>
-            <div class="hero-illustration">
-                <i class="fas fa-shield-halved"></i>
-            </div>
+          <aside class="card about__card" aria-label="Profil en bref">
+            <h3>En bref</h3>
+            <dl class="facts">
+              <div>
+                <dt>Localisation</dt>
+                <dd>Bénin</dd>
+              </div>
+              <div>
+                <dt>Diplôme</dt>
+                <dd>Licence SSRI — mention Très Bien</dd>
+              </div>
+              <div>
+                <dt>Stage</dt>
+                <dd>Assemblée nationale du Bénin · 3 mois</dd>
+              </div>
+              <div>
+                <dt>Certifications</dt>
+                <dd>CTIGA · Fortinet FCF</dd>
+              </div>
+              <div>
+                <dt>Recherche</dt>
+                <dd>Poste ou stage en cybersécurité / administration système</dd>
+              </div>
+            </dl>
+            <a class="link-arrow" href="#contact">
+              Discuter d’une opportunité
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+          </aside>
         </div>
-        <div class="hero-wave">
-            <svg viewBox="0 0 1440 120" fill="none">
-                <path d="M0 40L60 50C120 60 240 80 360 80C480 80 600 60 720 50C840 40 960 40 1080 50C1200 60 1320 80 1380 80L1440 80V120H0V40Z" fill="#f8fbff"/>
-            </svg>
-        </div>
-    </header>
-
-    <!-- ==================== À PROPOS ==================== -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="section-header">
-                <h2>À propos de moi</h2>
-                <div class="underline"></div>
-            </div>
-            <div class="about-grid">
-                <div class="about-text">
-                    <p>
-                        <strong>Diplômé d'une Licence en Sécurité des Systèmes et Réseaux Informatiques</strong> 
-                        avec la mention <span class="highlight">Très Bien</span> 🏆, je suis un professionnel passionné par 
-                        la protection des infrastructures et la résolution de problèmes techniques.
-                    </p>
-                    <p>
-                        J'ai eu l'opportunité d'effectuer un stage de <strong>3 mois à l'Assemblée nationale du Bénin</strong>, 
-                        où j'ai mis en pratique mes compétences en administration système et en sécurité réseau dans un 
-                        environnement institutionnel exigeant.
-                    </p>
-                    <p>
-                        Polyvalent, je maîtrise aussi bien l'installation d'OS et de serveurs, le dépannage matériel/logiciel, 
-                        que le montage vidéo et le graphisme avec Canva. Actuellement, je me forme en Data Science, 
-                        Machine Learning et Deep Learning.
-                    </p>
-                    <div class="about-stats">
-                        <div class="stat">
-                            <span class="stat-number">+3</span>
-                            <span class="stat-label">Mois de stage</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">TB</span>
-                            <span class="stat-label">Mention Licence</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">3</span>
-                            <span class="stat-label">Certifications</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-image">
-                    <div class="about-icon-circle">
-                        <i class="fas fa-user-graduate"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
+      </div>
     </section>
 
-    <!-- ==================== EXPÉRIENCE ==================== -->
-    <section id="experience" class="experience">
-        <div class="container">
-            <div class="section-header">
-                <h2>Expérience professionnelle</h2>
-                <div class="underline"></div>
+    <!-- ============================================================
+         02 — COMPÉTENCES
+    ============================================================ -->
+    <section class="section section--alt" id="competences" aria-labelledby="competences-title">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow">02 — Compétences</p>
+          <h2 id="competences-title">Ce que je sais mettre en œuvre</h2>
+          <p class="section__lead">
+            Des compétences classées par niveau réel d’autonomie, sans sur-promesse.
+          </p>
+        </header>
+
+        <div class="grid grid--skills">
+          <article class="card skill">
+            <div class="skill__top">
+              <span class="skill__icon" aria-hidden="true"><svg class="icon"><use href="#i-server"/></svg></span>
+              <span class="level level--op">Opérationnel</span>
             </div>
-            <div class="exp-card">
-                <div class="exp-icon">
-                    <i class="fas fa-landmark"></i>
-                </div>
-                <div class="exp-content">
-                    <h3>Stagiaire en Sécurité & Administration Système</h3>
-                    <h4>Assemblée nationale du Bénin <span>| 3 mois</span></h4>
-                    <ul>
-                        <li><i class="fas fa-check-circle"></i> Administration et maintenance des serveurs et postes de travail</li>
-                        <li><i class="fas fa-check-circle"></i> Mise en place de mesures de sécurité réseau et sensibilisation</li>
-                        <li><i class="fas fa-check-circle"></i> Dépannage matériel et logiciel en environnement professionnel</li>
-                        <li><i class="fas fa-check-circle"></i> Participation à l'optimisation de l'infrastructure IT</li>
-                    </ul>
-                </div>
+            <h3>Systèmes &amp; réseaux</h3>
+            <p>Installer, administrer et dépanner des environnements Windows et Linux, du poste de travail au serveur.</p>
+            <ul class="tags">
+              <li>Windows</li>
+              <li>Linux</li>
+              <li>macOS</li>
+              <li>Windows Server</li>
+              <li>TCP/IP</li>
+              <li>DNS</li>
+              <li>DHCP</li>
+              <li>VLAN</li>
+              <li>Hébergement web</li>
+              <li>Dépannage</li>
+            </ul>
+          </article>
+
+          <article class="card skill">
+            <div class="skill__top">
+              <span class="skill__icon" aria-hidden="true"><svg class="icon"><use href="#i-shield"/></svg></span>
+              <span class="level level--op">Opérationnel</span>
             </div>
+            <h3>Cybersécurité</h3>
+            <p>Sécuriser une infrastructure, analyser une surface d’attaque et pratiquer en laboratoire.</p>
+            <ul class="tags">
+              <li>Fortinet FCF</li>
+              <li>Red Team (CTIGA)</li>
+              <li>Analyse de vulnérabilités</li>
+              <li>Pentest en lab</li>
+              <li>Hack The Box</li>
+              <li>TryHackMe</li>
+            </ul>
+          </article>
+
+          <article class="card skill">
+            <div class="skill__top">
+              <span class="skill__icon" aria-hidden="true"><svg class="icon"><use href="#i-cpu"/></svg></span>
+              <span class="level level--progress">En progression</span>
+            </div>
+            <h3>Data &amp; IA</h3>
+            <p>Explorer les usages de la donnée et de l’IA appliqués à la détection et à l’analyse.</p>
+            <ul class="tags">
+              <li>Prompting</li>
+              <li>Machine Learning</li>
+              <li>Deep Learning</li>
+              <li>Data Science</li>
+            </ul>
+          </article>
+
+          <article class="card skill">
+            <div class="skill__top">
+              <span class="skill__icon" aria-hidden="true"><svg class="icon"><use href="#i-film"/></svg></span>
+              <span class="level level--other">Polyvalence</span>
+            </div>
+            <h3>Création &amp; multimédia</h3>
+            <p>Produire des supports clairs pour documenter, former et sensibiliser.</p>
+            <ul class="tags">
+              <li>Montage vidéo</li>
+              <li>Canva</li>
+              <li>Contenu visuel</li>
+            </ul>
+          </article>
         </div>
+      </div>
     </section>
 
-    <!-- ==================== CERTIFICATIONS ==================== -->
-    <section id="certifications" class="certifications">
-        <div class="container">
-            <div class="section-header">
-                <h2>Certifications</h2>
-                <div class="underline"></div>
-            </div>
-            <div class="cert-grid">
-                <!-- CTIGA -->
-                <div class="cert-card">
-                    <div class="cert-icon">
-                        <i class="fas fa-skull"></i>
-                    </div>
-                    <h3>CTIGA</h3>
-                    <p>Red Team</p>
-                    <span class="cert-badge">Certifié</span>
-                    <a href="https://courses.redteamleaders.com/exam-completion/08a05d91a89175b9" target="_blank" class="cert-link">
-                        <i class="fas fa-external-link-alt"></i> Voir le certificat
-                    </a>
-                </div>
+    <!-- ============================================================
+         03 — PARCOURS
+    ============================================================ -->
+    <section class="section" id="parcours" aria-labelledby="parcours-title">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow">03 — Parcours</p>
+          <h2 id="parcours-title">Expérience &amp; formation</h2>
+          <p class="section__lead">
+            Un stage en environnement institutionnel, et un diplôme obtenu avec la mention Très Bien.
+          </p>
+        </header>
 
-                <!-- NSE 1 -->
-                <div class="cert-card">
-                    <div class="cert-icon">
-                        <i class="fas fa-shield"></i>
-                    </div>
-                    <h3>NSE 1</h3>
-                    <p>Fortinet Network Security Associate</p>
-                    <span class="cert-badge">Certifié</span>
-                    <a href="https://www.credly.com/badges/c1dae8b8-ac67-41e2-b33e-e86417cdbee5/public_url" target="_blank" class="cert-link">
-                        <i class="fas fa-external-link-alt"></i> Voir le certificat
-                    </a>
-                </div>
+        <ol class="timeline">
+          <li class="timeline__item">
+            <article class="card tl">
+              <p class="tl__meta">
+                <span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-briefcase"/></svg> Stage</span>
+                <span class="muted">3 mois · Bénin</span>
+              </p>
+              <h3>Stagiaire en sécurité &amp; administration système</h3>
+              <p class="tl__org">Assemblée nationale du Bénin</p>
+              <ul class="checklist">
+                <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Administration et maintenance des serveurs et postes de travail</li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Mise en place de mesures de sécurité réseau et sensibilisation des utilisateurs</li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Dépannage matériel et logiciel en environnement professionnel</li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Participation à l’optimisation de l’infrastructure IT</li>
+              </ul>
+            </article>
+          </li>
 
-                <!-- NSE 2 -->
-                <div class="cert-card">
-                    <div class="cert-icon">
-                        <i class="fas fa-shield"></i>
-                    </div>
-                    <h3>NSE 2</h3>
-                    <p>Fortinet Network Security Associate</p>
-                    <span class="cert-badge">Certifié</span>
-                    <a href="https://www.credly.com/badges/5f8ecd5a-e682-431b-b372-572594e512ec/public_url" target="_blank" class="cert-link">
-                        <i class="fas fa-external-link-alt"></i> Voir le certificat
-                    </a>
-                </div>
-            </div>
-        </div>
+          <li class="timeline__item">
+            <article class="card tl">
+              <p class="tl__meta">
+                <span class="badge badge--accent"><svg class="icon" aria-hidden="true"><use href="#i-cap"/></svg> Diplôme</span>
+                <span class="muted">Mention Très Bien</span>
+              </p>
+              <h3>Licence en sécurité des systèmes et réseaux informatiques</h3>
+              <!-- TODO : préciser l'établissement et l'année d'obtention. -->
+              <p class="tl__org">Systèmes, réseaux et sécurité informatique</p>
+              <ul class="checklist">
+                <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Administration des systèmes et des réseaux</li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Fondamentaux de la sécurité offensive et défensive</li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Projets pratiques et travaux dirigés en laboratoire</li>
+              </ul>
+            </article>
+          </li>
+        </ol>
+      </div>
     </section>
 
-    <!-- ==================== COMPÉTENCES ==================== -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <div class="section-header">
-                <h2>Mes compétences</h2>
-                <div class="underline"></div>
+    <!-- ============================================================
+         04 — CERTIFICATIONS
+    ============================================================ -->
+    <section class="section section--alt" id="certifications" aria-labelledby="certifications-title">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow">04 — Certifications</p>
+          <h2 id="certifications-title">Certifications vérifiables</h2>
+          <p class="section__lead">
+            Cliquez sur le visuel pour ouvrir le certificat en PDF ; le lien du bas renvoie
+            vers la plateforme de l’organisme.
+          </p>
+        </header>
+
+        <div class="grid grid--certs">
+          <article class="card card--media">
+            <a class="media" href="assets/Certification-CTIGA.pdf" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir le certificat CTIGA au format PDF (nouvel onglet)">
+              <img src="assets/cert-ctiga.svg" alt="Certificat CTIGA — Red Team Leaders" width="800" height="500" loading="lazy" decoding="async">
+              <span class="media__hint" aria-hidden="true">Ouvrir le PDF <svg class="icon"><use href="#i-external"/></svg></span>
+            </a>
+            <div class="media__body cert">
+              <div class="cert__top">
+                <p class="cert__issuer">Red Team Leaders</p>
+                <span class="badge badge--ok"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Vérifié</span>
+              </div>
+              <h3>CTIGA</h3>
+              <p class="cert__desc">Certification orientée Red Team : reconnaissance, exploitation et posture offensive.</p>
+              <a class="cert__link" href="https://courses.redteamleaders.com/exam-completion/08a05d91a89175b9" target="_blank" rel="noopener noreferrer">
+                Vérifier sur la plateforme
+                <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg>
+                <span class="sr-only">— Red Team Leaders (nouvel onglet)</span>
+              </a>
             </div>
-            <div class="skills-grid">
-                <!-- Groupe 1 : Systèmes & Réseaux -->
-                <div class="skill-category">
-                    <h3><i class="fas fa-server"></i> Systèmes & Réseaux</h3>
-                    <div class="skill-tags">
-                        <span>Installation OS (Windows, Linux, macOS)</span>
-                        <span>Création et hébergement de site web</span>
-                        <span>Administration serveurs (Windows Server, Linux)</span>
-                        <span>Réseau (TCP/IP, DNS, DHCP, VLAN)</span>
-                        <span>Dépannage matériel & logiciel</span>
-                    </div>
-                </div>
-                <!-- Groupe 2 : Sécurité -->
-                <div class="skill-category">
-                    <h3><i class="fas fa-lock"></i> Cybersécurité</h3>
-                    <div class="skill-tags">
-                        <span>Red Team / Pentesting (CTIGA)</span>
-                        <span>Sécurité réseau (Fortinet NSE)</span>
-                        <span>Analyse de vulnérabilités</span>
-                        <span>HTB & TryHackMe (actif)</span>
-                    </div>
-                </div>
-                <!-- Groupe 3 : Création & Multimédia -->
-                <div class="skill-category">
-                    <h3><i class="fas fa-video"></i> Création & Multimédia</h3>
-                    <div class="skill-tags">
-                        <span>Montage vidéo (professionnel)</span>
-                        <span>Graphisme avec Canva</span>
-                        <span>Création de contenu visuel</span>
-                    </div>
-                </div>
-                <!-- Groupe 4 : IA & Data -->
-                <div class="skill-category">
-                    <h3><i class="fas fa-brain"></i> IA & Data Science</h3>
-                    <div class="skill-tags">
-                        <span>Prompting IA (maîtrise)</span>
-                        <span>Machine Learning (débutant)</span>
-                        <span>Deep Learning (débutant)</span>
-                        <span>Data Science (en apprentissage)</span>
-                    </div>
-                </div>
+          </article>
+
+          <article class="card card--media">
+            <a class="media" href="assets/Fortinet%20Certified%20Fundamentals%20in%20Cybersecurity.pdf" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir le certificat FCF au format PDF (nouvel onglet)">
+              <img src="assets/cert-fcf.svg" alt="Certificat Fortinet Certified Fundamentals in Cybersecurity" width="800" height="500" loading="lazy" decoding="async">
+              <span class="media__hint" aria-hidden="true">Ouvrir le PDF <svg class="icon"><use href="#i-external"/></svg></span>
+            </a>
+            <div class="media__body cert">
+              <div class="cert__top">
+                <p class="cert__issuer">Fortinet</p>
+                <span class="badge badge--ok"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Vérifié</span>
+              </div>
+              <h3>FCF</h3>
+              <p class="cert__desc">Fortinet Certified Fundamentals in Cybersecurity — menaces, réseaux et sécurité de l’information.</p>
+              <a class="cert__link" href="https://training.fortinet.com/" target="_blank" rel="noopener noreferrer">
+                Vérifier sur Fortinet Training
+                <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg>
+                <span class="sr-only">— Fortinet Training Institute (nouvel onglet)</span>
+              </a>
             </div>
+          </article>
         </div>
+      </div>
     </section>
 
-    <!-- ==================== ACTIVITÉS ==================== -->
-    <section id="activities" class="activities">
-        <div class="container">
-            <div class="section-header">
-                <h2>Activités & Projets</h2>
-                <div class="underline"></div>
+    <!-- ============================================================
+         05 — LABS & PROJETS
+    ============================================================ -->
+    <section class="section" id="labs" aria-labelledby="labs-title">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow">05 — Labs &amp; projets</p>
+          <h2 id="labs-title">La pratique, en continu</h2>
+          <p class="section__lead">
+            Un diplôme ne suffit pas : je m’entraîne régulièrement sur des environnements
+            contrôlés, avec une approche méthodique et documentée.
+          </p>
+        </header>
+
+        <!-- Visuels : remplacer les fichiers de assets/ par vos captures.
+             Même nom de fichier = aucune modification du HTML. -->
+        <div class="grid grid--labs">
+          <article class="card card--media lab">
+            <div class="media">
+              <img src="assets/proj-htb.svg" alt="Aperçu de la plateforme Hack The Box" width="800" height="500" loading="lazy" decoding="async">
+              <span class="media__hint" aria-hidden="true">Ouvrir <svg class="icon"><use href="#i-external"/></svg></span>
             </div>
-            <div class="activities-grid">
-                <div class="activity-card">
-                    <i class="fas fa-skull-crossbones"></i>
-                    <h3>Hack The Box</h3>
-                    <p>Actif sur la plateforme, résolution de machines et challenges de pentesting</p>
-                    <a href="#" class="activity-link">Voir mon profil</a>
-                </div>
-                <div class="activity-card">
-                    <i class="fas fa-user-secret"></i>
-                    <h3>TryHackMe</h3>
-                    <p>Pratique régulière de rooms en sécurité offensive et défensive</p>
-                    <a href="#" class="activity-link">Voir mon profil</a>
-                </div>
-                <div class="activity-card">
-                    <i class="fas fa-code"></i>
-                    <h3>Projets personnels</h3>
-                    <p>Automatisation, scripts de sécurité, labs virtuels et veille technologique</p>
-                    <a href="#" class="activity-link">Explorer</a>
-                </div>
+            <div class="media__body">
+              <h3>Hack The Box</h3>
+              <p class="lab__intro">Machines Linux et Windows, challenges web et élévation de privilèges.</p>
+              <ul class="tags">
+                <li>Pentest</li>
+                <li>Privilege escalation</li>
+                <li>Web</li>
+              </ul>
+              <div class="lab__foot">
+                <p class="lab__status"><span class="status-dot" aria-hidden="true"></span> Pratique régulière</p>
+                <a class="lab__link stretched-link" href="https://app.hackthebox.com/" target="_blank" rel="noopener noreferrer">
+                  Voir
+                  <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg>
+                  <span class="sr-only">— Hack The Box (nouvel onglet)</span>
+                </a>
+              </div>
             </div>
+          </article>
+
+          <article class="card card--media lab">
+            <div class="media">
+              <img src="assets/proj-thm.svg" alt="Aperçu de la plateforme TryHackMe" width="800" height="500" loading="lazy" decoding="async">
+              <span class="media__hint" aria-hidden="true">Ouvrir <svg class="icon"><use href="#i-external"/></svg></span>
+            </div>
+            <div class="media__body">
+              <h3>TryHackMe</h3>
+              <p class="lab__intro">Rooms offensives et défensives : fondamentaux réseau, web, blue team et red team.</p>
+              <ul class="tags">
+                <li>Blue team</li>
+                <li>Red team</li>
+                <li>Fondamentaux</li>
+              </ul>
+              <div class="lab__foot">
+                <p class="lab__status"><span class="status-dot" aria-hidden="true"></span> Pratique régulière</p>
+                <a class="lab__link stretched-link" href="https://tryhackme.com/" target="_blank" rel="noopener noreferrer">
+                  Voir
+                  <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg>
+                  <span class="sr-only">— TryHackMe (nouvel onglet)</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card card--media lab">
+            <div class="media">
+              <img src="assets/proj-lab.svg" alt="Aperçu du laboratoire personnel : machines virtuelles et scripts" width="800" height="500" loading="lazy" decoding="async">
+              <span class="media__hint" aria-hidden="true">Ouvrir <svg class="icon"><use href="#i-external"/></svg></span>
+            </div>
+            <div class="media__body">
+              <h3>Laboratoire personnel</h3>
+              <p class="lab__intro">Environnement virtualisé pour reproduire des scénarios d’attaque et de défense, scripts d’automatisation et veille technologique.</p>
+              <ul class="tags">
+                <li>Virtualisation</li>
+                <li>Scripting</li>
+                <li>Veille</li>
+              </ul>
+              <div class="lab__foot">
+                <p class="lab__status"><span class="status-dot" aria-hidden="true"></span> En construction</p>
+                <a class="lab__link stretched-link" href="https://github.com/Rayebmk" target="_blank" rel="noopener noreferrer">
+                  Voir
+                  <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg>
+                  <span class="sr-only">— mes dépôts GitHub (nouvel onglet)</span>
+                </a>
+              </div>
+            </div>
+          </article>
         </div>
+      </div>
     </section>
 
-    <!-- ==================== CONTACT ==================== -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2>Me contacter</h2>
-                <div class="underline"></div>
+    <!-- ============================================================
+         06 — CV
+    ============================================================ -->
+    <section class="section section--alt" id="cv" aria-labelledby="cv-title">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow">06 — CV</p>
+          <h2 id="cv-title">Mon CV en un coup d’œil</h2>
+          <p class="section__lead">
+            Parcours, certifications et compétences techniques, sur une page —
+            à consulter en ligne ou à télécharger.
+          </p>
+        </header>
+
+        <div class="cv-feature">
+          <a class="cv-feature__media" href="assets/mon-CV.pdf" target="_blank" rel="noopener noreferrer" aria-label="Visualiser le CV en PDF (nouvel onglet)">
+            <img src="assets/mon-CV.jpg" alt="Aperçu de la première page du CV de Brio-Mayor Kossoko" width="1414" height="2000" decoding="async">
+          </a>
+
+          <div class="cv-feature__body">
+            <p class="cv-feature__kicker">PDF · A4 · 1 page</p>
+            <h3>Brio-Mayor Kossoko</h3>
+            <p class="cv-feature__role">Cybersécurité · Systèmes &amp; réseaux</p>
+            <p class="cv-feature__desc">
+              Licence SSRI mention Très Bien, stage à l’Assemblée nationale du Bénin,
+              certifications CTIGA et Fortinet FCF.
+            </p>
+
+            <div class="cv-feature__actions">
+              <a class="btn btn--primary" href="assets/mon-CV.pdf" target="_blank" rel="noopener noreferrer">
+                <svg class="icon" aria-hidden="true"><use href="#i-eye"/></svg>
+                Visualiser le PDF
+                <span class="sr-only">(nouvel onglet)</span>
+              </a>
+              <a class="btn btn--ghost" href="assets/mon-CV.pdf" download>
+                <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>
+                Télécharger
+              </a>
             </div>
-            <div class="contact-content">
-                <p>N'hésitez pas à me joindre pour toute collaboration, projet ou opportunité !</p>
-                <div class="contact-links">
-                    <a href="https://github.com/Rayebmk" target="_blank" class="contact-btn github">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
-                    <a href="https://www.linkedin.com/in/brio-mayor-kossoko-5a1514340" target="_blank" class="contact-btn linkedin">
-                        <i class="fab fa-linkedin-in"></i> LinkedIn
-                    </a>
-                    <a href="https://wa.me/+22958749424" target="_blank" class="contact-btn twitter">
-                        <i class="fab fa-whatsapp"></i> WhatsApp
-                    </a>
-                    <a href="mailto:kossokoadewoumi@gmail.com" class="contact-btn email">
-                        <i class="fas fa-envelope"></i> Email
-                    </a>
-                </div>
-            </div>
+
+            <p class="cv-feature__note">
+              La visualisation s’ouvre dans un nouvel onglet ; le téléchargement enregistre le fichier PDF.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- ==================== FOOTER ==================== -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Tous droits réservés.</p>
-            <p class="footer-quote">"La sécurité n'est pas un produit, c'est un processus."</p>
+    <!-- ============================================================
+         07 — CONTACT
+    ============================================================ -->
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="contact-panel">
+          <p class="eyebrow">07 — Contact</p>
+          <h2 id="contact-title">Un poste, un stage, une mission&nbsp;?</h2>
+          <p class="contact-panel__lead">
+            Je réponds volontiers aux opportunités en cybersécurité, administration système
+            et réseaux. Le plus simple reste l’e-mail.
+          </p>
+
+          <div class="contact-actions">
+            <a class="btn btn--primary" href="mailto:kossokoadewoumi@gmail.com">
+              <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>
+              Envoyer un mail
+            </a>
+          </div>
+
+          <ul class="socials">
+            <li>
+              <a class="social" href="https://www.linkedin.com/in/brio-mayor-kossoko-5a1514340" target="_blank" rel="noopener noreferrer">
+                <svg class="icon icon--fill" aria-hidden="true"><use href="#i-linkedin"/></svg>
+                LinkedIn
+                <span class="sr-only">(nouvel onglet)</span>
+              </a>
+            </li>
+            <li>
+              <a class="social" href="https://github.com/Rayebmk" target="_blank" rel="noopener noreferrer">
+                <svg class="icon icon--fill" aria-hidden="true"><use href="#i-github"/></svg>
+                GitHub
+                <span class="sr-only">(nouvel onglet)</span>
+              </a>
+            </li>
+            <li>
+              <a class="social" href="https://wa.me/22958749424" target="_blank" rel="noopener noreferrer">
+                <svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>
+                WhatsApp
+                <span class="sr-only">(nouvel onglet)</span>
+              </a>
+            </li>
+          </ul>
+
+          <p class="contact-panel__place">
+            <svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>
+            Bénin
+          </p>
         </div>
-    </footer>
+      </div>
+    </section>
+  </main>
 
-    <!-- Script JS pour l'effet de frappe et le menu mobile -->
-    <script>
-        // --- Effet de frappe (Typing) ---
-        const words = [
-            'Spécialiste en Cybersécurité',
-            'Administrateur Système & Réseaux',
-            'Pentester en devenir (Red Team)',
-            'Passionné de Data Science & IA'
-        ];
-        let wordIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        const typingElement = document.querySelector('.typing-text');
-
-        function typeEffect() {
-            const currentWord = words[wordIndex];
-            if (isDeleting) {
-                typingElement.textContent = currentWord.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                typingElement.textContent = currentWord.substring(0, charIndex + 1);
-                charIndex++;
-            }
-
-            if (!isDeleting && charIndex === currentWord.length) {
-                isDeleting = true;
-                setTimeout(typeEffect, 2000);
-                return;
-            }
-            if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                wordIndex = (wordIndex + 1) % words.length;
-                setTimeout(typeEffect, 500);
-                return;
-            }
-            const speed = isDeleting ? 50 : 100;
-            setTimeout(typeEffect, speed);
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            typeEffect();
-        });
-
-        // --- Menu mobile (Hamburger) ---
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('active');
-        });
-
-        // Fermer le menu au clic sur un lien (mobile)
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
-            });
-        });
-
-        // --- Animation au scroll (fade-in) ---
-        const observerOptions = { threshold: 0.2 };
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.section-header, .about-grid, .cert-card, .skill-category, .activity-card, .exp-card, .contact-content').forEach(el => {
-            observer.observe(el);
-        });
-    </script>
+  <!-- ============================================================
+       PIED DE PAGE
+  ============================================================ -->
+  <footer class="site-footer">
+    <div class="container footer__inner">
+      <p class="footer__brand">BMK<span>.</span>folio</p>
+      <p class="footer__note">Site statique : aucun cookie, aucun traceur, aucune requête vers un tiers.</p>
+      <p class="footer__copy">© 2026 — Tous droits réservés.</p>
+    </div>
+  </footer>
 </body>
 </html>
